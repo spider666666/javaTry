@@ -1,0 +1,21 @@
+#使用yml文件的优点：
+#1.有层次感，不会使代码显得臃肿 2.便于维护和管理
+
+spring:
+  #项目的名称
+  application:
+    name: spring-demo-01
+  #数据库的连接
+  datasource:
+    #在这里使用默认的数据库连接池
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    url: jdbc:mysql://localhost:3306/spring
+    username: root
+    password: 123456
+
+#mybatis日志和配置文件的设立
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:org.example.springdemo01.Mapper/*.xml
